@@ -1,0 +1,31 @@
+.navbar
+  .container
+    = link_to 'CSGOSurf', '#', class: 'logo'
+    ul.pull-left
+      li class="#{'active' if current_page?(root_path)}"
+        = link_to '#' do
+          = fa_icon 'home'
+      = navbar_link 'Maps', '#'
+      = navbar_link 'Servers', '#'
+      = navbar_link 'Surfers', '#'
+      = navbar_link 'Community', '#'
+    ul.pull-right
+      - if current_user
+        li.user
+          a href='#'
+            i.glyphicon.glyphicon-cog
+            | Username
+        li.logout
+          a href='#'
+            i.glyphicon.glyphicon-off
+            | Logout
+      - else
+        li.login
+          a href='#'
+            = fa_icon 'lock'
+            | Login
+        li.signup
+          a href='#'
+            = fa_icon 'user'
+            | Sign Up
+

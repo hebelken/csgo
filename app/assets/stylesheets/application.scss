@@ -1,0 +1,29 @@
+// config
+@import 'variables';
+@import 'mixins';
+
+// bootstrap
+@import 'bootstrap-sprockets';
+@import 'bootstrap/variables';
+@import 'bootstrap/mixins';
+@import 'bootstrap/normalize';
+@import 'bootstrap/print';
+@import 'bootstrap/scaffolding';
+@import 'bootstrap/type';
+@import 'bootstrap/grid';
+@import 'bootstrap/utilities';
+@import 'bootstrap/responsive-utilities';
+@import 'bootstrap/alerts';
+@import 'bootstrap/tables';
+
+// base
+@import 'base';
+
+// libraries
+@import 'font-awesome';
+@import 'owl.carousel';
+@import 'owl.theme';
+
+// components
+@import 'shared/*';
+@import 'pages/*';

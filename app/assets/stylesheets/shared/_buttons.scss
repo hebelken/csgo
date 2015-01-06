@@ -1,0 +1,15 @@
+.btn {
+  border: none;
+  color: #fff;
+  background: $brand-primary;
+  cursor: pointer;
+  padding: 10px 20px;
+  display: inline-block;
+  margin: 0;
+  outline: none;
+  position: relative;
+  border-radius: 5px;
+
+
+  &:hover { background: darken($brand-primary, 5%) }
+}

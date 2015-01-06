@@ -1,0 +1,46 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,700);
+
+$font-family-sans-serif:  'Roboto', Helvetica, Arial, sans-serif !default;
+$font-size-base:          16px !default;
+
+$body-bg:                 #f1f1f1;
+$footer-bg:               #444;
+
+$brand-primary: #2990AC;//#2780f8
+
+$navbar-logo: 'logo-smallest.png';
+$navbar-logo-width: 145px;
+$navbar-logo-height: 40px;
+$navbar-height: $navbar-logo-height + 30px; // because i say so
+$navbar-font-family: 'Roboto', Helvetica;
+$navbar-bg: #1f2123;
+
+// -- grid
+
+$wrapper-width: 970px;
+$container-large-desktop: $wrapper-width !default;
+$container-tablet:        100% !default;
+
+$screen-xs:               480px !default;
+$screen-xs-min:           $screen-xs !default;
+$screen-phone:            $screen-xs-min !default;
+
+$screen-sm:               768px !default;
+$screen-sm-min:           $screen-sm !default;
+$screen-tablet:           $screen-sm-min !default;
+
+$screen-md:               992px !default;
+$screen-md-min:           $screen-md !default;
+$screen-desktop:          $screen-md-min !default;
+
+$screen-lg:               1200px !default;
+$screen-lg-min:           $screen-lg !default;
+$screen-lg-desktop:       $screen-lg-min !default;
+
+$screen-xlg:              1441px !default;
+$screen-xlg-min:          $screen-lg !default;
+$screen-xlg-desktop:      $screen-lg-min !default;
+
+$screen-xs-max:           ($screen-sm-min - 1) !default;
+$screen-sm-max:           ($screen-md-min - 1) !default;
+$screen-md-max:           ($screen-lg-min - 1) !default;

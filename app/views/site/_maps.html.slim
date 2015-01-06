@@ -1,0 +1,25 @@
+- images = ['http://cloud-4.steampowered.com/ugc/3314958580867622488/887D9DD03D5B8BC460FBED4CE0FE9130107A1CDC/637x358.resizedimage', 'http://cloud-4.steampowered.com/ugc/900988960350718822/EBFB0DDFCDDDA381632DDE52D91055B0B8E04089/637x358.resizedimage', 'http://cloud-4.steampowered.com/ugc/3314958580867624898/85B67863AEB70BD49E1285E002BBFE8DCAEDBFBE/637x358.resizedimage' ]
+- names = %w(kitsune error tester mesa_mine mesa)
+
+.panel
+  .container
+    h1 Maps
+
+    .maps
+      - 8.times do
+        .map
+          a href='#' style='background-image: url(#{images.sample})'
+            .map-name surf_#{names.sample}
+            .map-details
+              a href="http://d.themepeach.com/sevenmag/the-ultimate-guide-to-logo-design/"
+                = fa_icon 'calendar'
+                | Feb 4, 2014
+              span.map-comments
+                a href="http://d.themepeach.com/sevenmag/the-ultimate-guide-to-logo-design/#comments"
+                  = fa_icon 'comments'
+                  | 0
+                a href="http://d.themepeach.com/sevenmag/the-ultimate-guide-to-logo-design/#comments"
+                  = fa_icon 'heart'
+                  | 0
+
+

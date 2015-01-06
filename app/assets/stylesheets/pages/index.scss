@@ -1,0 +1,82 @@
+.maps {
+  .map {
+    @include clearfix;
+    position: relative;
+    > a {
+      height: 220px;
+      display: block;
+
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        pointer-events: none;
+        @include gradient-vertical(rgba(0,0,0,0), #000);
+        z-index: 0;
+      }
+    }
+  }
+
+  .map-name {
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    padding: 0 20px;
+    margin: 0 0 10px !important;
+    color: #FFF;
+    z-index: 98;
+    font-size: 16px;
+  }
+
+  .map-details {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    padding: 0 20px;
+    width: 100%;
+    z-index: 98;
+
+    a {
+      color: rgba(255,255,255,0.5);
+      font-size: 12px;
+      background-size: 100% 100%;
+
+      i { margin-right: 5px; }
+    }
+
+    .map-comments {
+      float: right;
+      a { margin-left: 10px; }
+    }
+  }
+}
+
+.search {
+  padding-bottom: 30px;
+
+  .finder {
+    @include search;
+    margin: 20px 0;
+    font-size: 24px;
+
+    input {
+      border-width: 2px;
+      padding-left: 40px;
+      @include placeholder(#eee);
+    }
+  }
+}
+
+.ad {
+  padding-top: 3px;
+  position: relative;
+  text-align: right;
+  right: 0px;
+  top: 20px;
+}
+
