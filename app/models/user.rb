@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   validates :username, presence: true
 
   has_many :maps
+  has_many :surf_servers
+  has_many :server_groups
 
   def ensure_authentication_token
     if authentication_token.blank?

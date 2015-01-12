@@ -5,19 +5,6 @@
     > a {
       height: 220px;
       display: block;
-
-      &:before {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        pointer-events: none;
-        @include gradient-vertical(rgba(0,0,0,0), #000);
-        z-index: 0;
-      }
     }
   }
 
@@ -58,10 +45,17 @@
 
 .search {
   padding-bottom: 30px;
+  background: #fff;
+  margin-bottom: 40px;
+
+  p {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
 
   .finder {
     @include search;
-    margin: 20px 0;
+    margin: 20px 0 40px;
     font-size: 24px;
 
     input {
@@ -77,6 +71,5 @@
   position: relative;
   text-align: right;
   right: 0px;
-  top: 20px;
+  top: 0px;
 }
-

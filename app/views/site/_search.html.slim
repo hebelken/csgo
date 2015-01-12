@@ -1,19 +1,23 @@
 .search.panel
   .container
     .finder
-      input#search.finder-input placeholder="Search for a map to see runs, times, and tips. Or search for a server name." type="text" tabindex=0 /
+      input.finder-input placeholder='Search for a map to see runs, times, and tips. Or search for a server name.' type='text' tabindex=0 /
     .row
       .col-xs-9
-        h1 Welcome to CSGOSurf
+        .title : h2 Welcome to CSGOSurf
         p
           strong New to surfing?
-          |  Can't seem to beat a certain map? Watch some runs on a specific
-          a href="#"  map
-          | . Find some servers to practice on in our curated
-          a href="#"  server list.
-        p 
-          strong Become a donor
-          |  and help keep the site running! By donating, you won't see ads on the site and gain access to donor only features. 
+          |  Can't seem to beat a certain map?
+          a href='/maps' Find the map 
+          | , then watch some runs for it. Or, find some servers to practice on in our curated 
+          a href='/servers' server list
+          | .
+        p
+          a href='/signup' Sign up
+          |  and post videos of runs, add new maps and servers, and much more.
+        p
+          a href='/donor' Become a donor
+          |  and help keep the site running! By donating, you won't see ads on the site and gain access to donor only features.
       .col-xs-3
         .ad = render 'shared/google_adsense', type: 'small'
 

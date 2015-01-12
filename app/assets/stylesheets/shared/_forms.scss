@@ -7,9 +7,7 @@
   border-radius: 8px;
   width: 50%;
 
-  .fields {
-    padding: 0 20px;
-  }
+  .fields { padding: 0 20px; }
 
   h1 {
     font-weight: bold;
@@ -72,12 +70,11 @@
   }
 }
 
-input[type="text"], 
-input[type="number"], 
-input[type="email"], 
-input[type="password"], 
-textarea, 
-select {
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+textarea, select {
   padding: 10px;
   border: 1px solid #eee;
   margin: 0;
@@ -87,15 +84,10 @@ select {
   border-radius: 8px;
   width: 100%;
   max-width: 100%;
-  @include transition(all .07s ease-out);
+  @include transition(all 0.1s linear);
 
-  &:hover {
-    border-color: #ededed;
-  }
-  
-  &:focus {
-    border-color: #ddd; 
-  }
+  &:hover { border-color: #ededed; }
+  &:focus { border-color: #ddd; }
 }
 
 select {

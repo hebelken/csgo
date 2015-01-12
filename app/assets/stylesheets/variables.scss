@@ -1,24 +1,20 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,700);
+@import url(https://fonts.googleapis.com/css?family=Roboto:200,300,400,700|Rajdhani:300,400,700);
 
 $font-family-sans-serif:  'Roboto', Helvetica, Arial, sans-serif !default;
+$headings-font-family:    'Rajdhani', 'Roboto', Helvetica, Arial, sans-serif !default;
 $font-size-base:          16px !default;
 
-$body-bg:                 #f1f1f1;
+$body-bg:                 #ededed;
 $footer-bg:               #444;
 
-$brand-primary: #2990AC;//#2780f8
+$brand-primary:           #0074DE;
+$brand-secondary:         #0069c8;
 
-$navbar-logo: 'logo-smallest.png';
-$navbar-logo-width: 145px;
-$navbar-logo-height: 40px;
-$navbar-height: $navbar-logo-height + 30px; // because i say so
-$navbar-font-family: 'Roboto', Helvetica;
-$navbar-bg: #1f2123;
+$navbar-height:           90px;
+$navbar-font-family:      'Roboto', Helvetica;
+$navbar-border:           rgba(255,255,255,0.1);
+$navbar-bg:               #36474F; //#1f2123 #1F262E
 
-// -- grid
-
-$wrapper-width: 970px;
-$container-large-desktop: $wrapper-width !default;
 $container-tablet:        100% !default;
 
 $screen-xs:               480px !default;

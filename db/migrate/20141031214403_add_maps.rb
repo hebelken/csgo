@@ -4,8 +4,8 @@ class AddMaps < ActiveRecord::Migration
       t.string :name
       t.string :url
       t.string :tier
-      t.string :map_type  
-
+      t.string :map_type
+      t.belongs_to :user, index: true
       t.timestamps
     end
   end

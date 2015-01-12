@@ -22,12 +22,10 @@ $(function() {
     paginationNumbers: false
   });
 
-  $().prettyEmbed();
-
   $('.runs').owlCarousel({
     slideSpeed: 1500,
     paginationSpeed: 600,
-    items: 2,
+    items: 3,
     autoPlay: true,
     stopOnHover: true,
     addClassActive: true,
@@ -38,8 +36,16 @@ $(function() {
     pagination: false,
     paginationNumbers: false
   });
+
+  $().prettyEmbed();
+
+  $('.toggler').click(function() {
+    $(this).toggleClass('active');
+    var target = $(this).data('target');
+    $('.'+target).toggle();
+  });
 })
 
 window.onload = function() {
-  var input = document.getElementById("search").focus();
+  //var input = document.getElementById("search").focus();
 }

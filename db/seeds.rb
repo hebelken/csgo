@@ -19,11 +19,27 @@ AdminUser.create({
   password_confirmation: 'password',
 })
 
+u = User.find 1
+
 Map.create([
-  {name: 'surf_kitsune', url: 'http://steamworkshop.com/maps/surf_kitsune', tier: 1, map_type: 'stages'},
-  {name: 'surf_classics', url: 'http://steamworkshop.com/maps/surf_kitsune', tier: 1, map_type: 'stages'},
-  {name: 'surf_syria', url: 'http://steamworkshop.com/maps/surf_kitsune', tier: 2, map_type: 'linear'},
-  {name: 'surf_utopia_v3', url: 'http://steamworkshop.com/maps/surf_kitsune', tier: 2, map_type: 'linear'},
-  {name: 'surf_mesa', url: 'http://steamworkshop.com/maps/surf_kitsune', tier: 1, map_type: 'linear'},
+  {name: 'surf_kitsune', url: 'http://steamworkshop.com/maps/surf_kitsune', tier: 1, map_type: 'stages', user: u},
+  {name: 'surf_classics', url: 'http://steamworkshop.com/maps/surf_classics', tier: 1, map_type: 'stages', user: u},
+  {name: 'surf_syria', url: 'http://steamworkshop.com/maps/surf_syria', tier: 2, map_type: 'linear', user: u},
+  {name: 'surf_utopia_v3', url: 'http://steamworkshop.com/maps/surf_utopia_v3', tier: 2, map_type: 'linear', user: u},
+  {name: 'surf_mesa', url: 'http://steamworkshop.com/maps/surf_mesa', tier: 1, map_type: 'linear', user: u},
 ])
 
+ServerGroup.create([
+  {name: 'KSF', url: 'ksfclan.com', description: 'KSF Friendly clan We like to surf. We have tons of servers available, hold tournaments. Check out our website at ksfclan.com', owner: 'brous', user: u},
+  {name: 'Butts', url: 'butts.com', description: 'Butts Friendly clan We like to surf. We have tons of servers available, hold tournaments. Check out our website at ksfclan.com', owner: 'brous', user: u},
+  {name: 'CGN', url: 'chicagogamingnetwork.com', description: '--CGN-- Friendly clan We like to surf. We have tons of servers available, hold tournaments. Check out our website at ksfclan.com', owner: 'brous', user: u},
+])
+
+sg = ServerGroup.find_by_name('KSF')
+
+SurfServer.create([
+  {name: '[KSFClan.com] #1 24/7 SurfTimer!', url: 'ksfclan.com', ip: 'surf.ksfclan.com:27015', user: u, server_group: sg}, 
+  {name: '[KSFClan.com] #2 Expert Server [Tier1-3]', url: 'ksfclan.com', ip: 'surf2.ksfclan.com:27015', user: u, server_group: sg}, 
+  {name: '[KSFClan.com] #1 24/7 SurfTimer!', url: 'ksfclan.com', ip: 'surf.ksfclan.com:27015', user: u}, 
+  {name: '[KSFClan.com] #1 24/7 SurfTimer!', url: 'ksfclan.com', ip: 'surf.ksfclan.com:27015', user: u}, 
+])

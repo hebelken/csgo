@@ -1,14 +1,14 @@
-.navbar
+.navbar-primary
   .container
-    = link_to 'CSGOSurf', '#', class: 'logo'
+    .navbar-menu.pull-left
+      a href='#' class='logo' = image_tag 'logo-160.png'
+      a href='#' class='search-toggle toggler' data-target='finder' = fa_icon 'search'
+
     ul.pull-left
-      li class="#{'active' if current_page?(root_path)}"
-        = link_to '#' do
-          = fa_icon 'home'
       = navbar_link 'Maps', '#'
       = navbar_link 'Servers', '#'
-      = navbar_link 'Surfers', '#'
       = navbar_link 'Community', '#'
+
     ul.pull-right
       - if current_user
         li.user

@@ -1,20 +1,3 @@
-- servers = ['[KSFClan.com] #1 24/7 SurfTimer!', 'AG:\\Something Fucking Stupid SurfTimer Tier[1-3]', 'Gaming-Allstars Tier1-3 SurfTimer'] 
-.servers.panel
-  .container
-    h1 Server list
-    table.table
-      thead
-        tr
-          th #
-          th Name 
-          th Server 
-          th Current Map
-          th Players
-      tbody
-        - 4.times do
-          tr
-            th scope="row"  1
-            td = servers.sample 
-            td surf.ksfclan.com:27050
-            td surf_kitsune 
-            td 32/60
+ul.box-list
+  - @servers.each do |server|
+    = server
