@@ -14,8 +14,3 @@ body {
   zoom: 1;
   background: #f2f2f2;
 }
-
-a {
-  text-decoration: underline;
-  @include transition(0.1s all linear);
-}

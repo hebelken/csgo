@@ -4,13 +4,13 @@ module API
       include API::V1::Defaults
 
       resource :maps do
-        desc "Return all maps"
-        get "", root: :maps do
+        desc 'Return all maps'
+        get '', root: :maps do
           {maps: Map.all}
         end
 
-        desc "Update maps"
-        put ":id", root: :maps do
+        desc 'Update maps'
+        put ':id', root: :maps do
           map_params = params[:map]
           map = Map.find_by_name(map_params[:name])
 
@@ -32,7 +32,7 @@ module API
           end
         end
 
-        desc "Create a new map"
+        desc 'Create a new map'
         post do
           map_params = params[:map]
           map = Map.create(map_params)
@@ -45,11 +45,11 @@ module API
         end
 
 
-        desc "Return a map"
+        desc 'Return a map'
         params do
-          requires :id, type: String, desc: "ID of the map "
+          requires :id, type: String, desc: 'ID of the map '
         end
-        get ":id", root: "map" do
+        get ':id', root: 'map' do
           {map: Map.where(id: permitted_params[:id]).first!}
         end
       end

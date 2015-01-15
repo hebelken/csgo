@@ -4,17 +4,17 @@ module API
       include API::V1::Defaults
 
       resource :users do
-        desc "Return all users"
-        get "", root: :users do
+        desc 'Return all users'
+        get '', root: :users do
           {users: User.all}
         end
 
-        desc "Return a user"
-        get ":id", root: "user" do
+        desc 'Return a user'
+        get ':id', root: 'user' do
           {user: User.where(id: params[:id]).first!}
         end
 
-        desc "Create a new user"
+        desc 'Create a new user'
         post do
           p = params[:user]
           user = User.create(username: p[:username],

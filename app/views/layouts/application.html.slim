@@ -7,7 +7,6 @@ html
     meta content='' name='description' /
     meta content='width=device-width, initial-scale=1' name='viewport' /
     = stylesheet_link_tag 'application', media: 'all'
-    = javascript_include_tag 'application'
     = csrf_meta_tags
   body
     = render 'layouts/navbar'
@@ -16,3 +15,5 @@ html
       = yield
 
     = render 'layouts/footer'
+
+    = javascript_include_tag 'application'

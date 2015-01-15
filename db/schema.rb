@@ -55,10 +55,12 @@ ActiveRecord::Schema.define(version: 20150112041238) do
     t.string   "tier"
     t.string   "map_type"
     t.integer  "user_id"
+    t.integer  "server_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "maps", ["server_id"], name: "index_maps_on_server_id", using: :btree
   add_index "maps", ["user_id"], name: "index_maps_on_user_id", using: :btree
 
   create_table "server_groups", force: true do |t|
@@ -73,23 +75,25 @@ ActiveRecord::Schema.define(version: 20150112041238) do
 
   add_index "server_groups", ["user_id"], name: "index_server_groups_on_user_id", using: :btree
 
-  create_table "surf_servers", force: true do |t|
-    t.string   "name",            null: false
+  create_table "servers", force: true do |t|
+    t.string   "name",                              null: false
     t.string   "url"
-    t.string   "ip",              null: false
-    t.string   "status"
-    t.string   "rank"
-    t.integer  "players"
+    t.string   "port",                              null: false
+    t.string   "ip",                                null: false
+    t.boolean  "pinged",            default: false
+    t.integer  "number_of_players"
     t.integer  "max_players"
-    t.text     "player_names",                 array: true
+    t.string   "map_name"
+    t.integer  "ping"
+    t.text     "player_names",                                   array: true
     t.integer  "server_group_id"
-    t.integer  "user_id",         null: false
+    t.integer  "user_id",                           null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "surf_servers", ["server_group_id"], name: "index_surf_servers_on_server_group_id", using: :btree
-  add_index "surf_servers", ["user_id"], name: "index_surf_servers_on_user_id", using: :btree
+  add_index "servers", ["server_group_id"], name: "index_servers_on_server_group_id", using: :btree
+  add_index "servers", ["user_id"], name: "index_servers_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "username",                           null: false

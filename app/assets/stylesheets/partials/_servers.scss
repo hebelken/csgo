@@ -1,0 +1,124 @@
+$server-padding: 8px;
+$server-border: 1px solid rgba(0,0,0,0.1);
+$server-font-size: 14px;
+$server-font-size-sm: 12px;
+$server-bottom-padding: $server-padding - 3;
+$ip-padding: 8px;
+$ip-color: rgba(0,0,0,0.8);
+
+.servers {
+  padding: 0;
+  margin: 0;
+
+  li {
+    list-style: none;
+    border-bottom: $server-border;
+    &:last-child { border-bottom: none; }
+    &:hover { background: #fafafa; }
+  }
+
+  .server {
+    position: relative;
+    @include clearfix;
+  }
+
+  .server-group {
+    position: absolute;
+    font-size: 13px;
+    bottom: 32px;
+    right: $server-padding;
+    font-size: $server-font-size;
+    @include opacity(0.3);
+    font-weight: bold;
+  }
+
+  .pinged {
+    color: green;
+    margin-right: 3px;
+    @include opacity(0.8);
+    padding: 0 3px;
+    &.false { color: red; }
+  }
+
+  .server-info {
+    float: right;
+    font-size: $server-font-size-sm;
+
+    .players {
+      margin: 0 5px;
+      font-weight: bold;
+    }
+  }
+
+  .actions {
+    font-size: 12px;
+    @include clearfix;
+
+    a {
+      @include opacity(0.3);
+      color: #444;
+      display: block;
+      float: left;
+      margin-right: 10px;
+      @include transition(all 0.1s linear);
+
+      &:hover {
+        text-decoration: none;
+        @include opacity(0.6);
+      }
+    }
+
+    i { margin-right: 3px; }
+  }
+
+  .voting {
+    float: left;
+    width: 45px;
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  .meta {
+    margin: 8px 0;
+    float: left;
+
+    .name {
+      font-weight: bold;
+      display: block;
+      font-size: $server-font-size + 1;
+      width: 302px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: #444;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    .ip {
+      font-size: 13px;
+      overflow: hidden;
+      position: relative;
+
+      &:hover {
+        text-decoration: none;
+        color: $brand-primary;
+
+        i {
+          bottom: 0;
+          @include opacity(1);
+        }
+      }
+
+      i {
+        position: relative;
+        bottom: -20px;
+        margin-left: 8px;
+        @include opacity(0);
+        @include transition(all 0.1s linear);
+      }
+    }
+  }
+}

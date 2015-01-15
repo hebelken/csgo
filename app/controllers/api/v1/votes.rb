@@ -4,12 +4,12 @@ module API
       include API::V1::Defaults
 
       resource :votes do
-        desc "Return all votes"
-        get "", root: :votes do
+        desc 'Return all votes'
+        get '', root: :votes do
           {votes: Vote.all}
         end
 
-        desc "Create a new vote"
+        desc 'Create a new vote'
         post do
           p = params[:vote]
           vote = Vote.create(voteable_id: p[:id],

@@ -1,3 +1,36 @@
-ul.box-list
+ul.servers.box-list
   - @servers.each do |server|
-    = server
+    li
+      div.server data-id="#{server.id}"
+        div.voting
+          = link_to '#', class: 'upvote active' do
+            = fa_icon 'chevron-up'
+          span.votes 56
+          = link_to '#', class: 'downvote' do
+            = fa_icon 'chevron-down'
+
+        div.meta
+          = link_to '#', class: 'name' do
+            = server.name
+          = link_to '#', class: 'ip' do
+            span= "#{server.ip_address}"
+            = fa_icon 'clipboard'
+
+          div.actions
+            = link_to '#', class: 'likes' do
+              = fa_icon 'heart'
+              | 1012
+
+            = link_to '#', class: 'comments' do
+              = fa_icon 'comments'
+              | 10
+
+            div.server-info
+              span.map_name= server.map_name
+              - if server.number_of_players
+                span.players= server.players_info
+              span.pinged class="#{server.pinged}"
+                = fa_icon 'circle'
+
+        - if server.server_group
+          div.server-group= server.server_group.name

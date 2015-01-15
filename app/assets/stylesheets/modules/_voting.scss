@@ -1,0 +1,29 @@
+.voting {
+  span {
+    display: block;
+    font-family: $headings-font-family;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 20px;
+    cursor: pointer;
+  }
+
+  > a {
+    display: block;
+    @include opacity(0.5);
+    @include transition(all 0.1s linear);
+
+    i {
+      font-size: 24px;
+      line-height: 5px;
+    }
+
+    &.active,
+    &:hover {
+      @include opacity(1);
+    }
+
+    &.downvote { height: 15px; }
+  }
+}
+

@@ -6,6 +6,7 @@ class AddMaps < ActiveRecord::Migration
       t.string :tier
       t.string :map_type
       t.belongs_to :user, index: true
+      t.belongs_to :server, index: true
       t.timestamps
     end
   end

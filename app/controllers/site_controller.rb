@@ -1,5 +1,5 @@
 class SiteController < ApplicationController
   def index
-    @servers ||= SurfServer.all
+    @servers ||= Surf::Server.all
   end
 end

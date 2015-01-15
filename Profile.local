@@ -1,2 +1,0 @@
-redis: redis-server /usr/local/etc/redis.conf
-postgres: postgres -D /usr/local/var/postgres

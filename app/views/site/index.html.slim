@@ -12,15 +12,15 @@
               = fa_icon 'sort-down'
         .box-content
           = render 'servers'
+
     .col-xs-8
       .box
         .box-header
-          .box-label MOST RECENT 
+          .box-label Most Recent
           .box-sort
             .sort-toggle
               | Sort
               = fa_icon 'sort-down'
         .box-content
-          ul.box-list
-            li Test
+          = link_to 'test', '#', class: 'btn btn-default'
 
