@@ -1,7 +1,8 @@
 ul.servers.box-list
   - @servers.each do |server|
     li
-      div.server data-id="#{server.id}"
+      div.server data-id="#{server.id}" class="loading"
+        div.progress
         div.voting
           = link_to '#', class: 'upvote active' do
             = fa_icon 'chevron-up'
@@ -22,15 +23,17 @@ ul.servers.box-list
               | 1012
 
             = link_to '#', class: 'comments' do
-              = fa_icon 'comments'
+              = fa_icon 'comment'
               | 10
 
             div.server-info
               span.map_name= server.map_name
               - if server.number_of_players
-                span.players= server.players_info
+                span.players
+                  em.number_of_players= server.number_of_players
+                  | /
+                  em.max_players= server.max_players
               span.pinged class="#{server.pinged}"
-                = fa_icon 'circle'
 
         - if server.server_group
           div.server-group= server.server_group.name
