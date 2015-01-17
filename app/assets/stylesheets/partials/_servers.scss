@@ -138,27 +138,6 @@ $ip-color: rgba(0,0,0,0.8);
       &:after {
         @include transition(all 0.3s linear);
       }
-
-      &:hover {
-        text-decoration: none;
-
-        &:after {
-          display: block;
-          position: absolute;
-          right: 0;
-          margin-left: -10px;
-          top: 4px;
-          font: normal normal normal 14px/1 FontAwesome;
-          text-rendering: auto;
-          -webkit-font-smoothing: antialiased;
-          -moz-osx-font-smoothing: grayscale;
-          @include box-sizing(border-box);
-          @include transition(0.1s ease-in-out);
-          content: "\f054";
-          padding-left: 4px;
-          background: #fff;
-        }
-      }
     }
 
     .ip {

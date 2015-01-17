@@ -28,12 +28,14 @@ ul.servers.box-list
 
             div.server-info
               span.map_name= server.map_name
+
               - if server.number_of_players
                 span.players
                   em.number_of_players= server.number_of_players
                   | /
                   em.max_players= server.max_players
-              span.pinged class="#{server.pinged}"
+
+              span.pinged class="#{server.pinged}" data-toggle="tooltip" data-placement="right" title="24"
 
         - if server.server_group
           div.server-group= server.server_group.name
