@@ -21,6 +21,7 @@ gem 'bootstrap-sass'
 gem 'font-awesome-rails'
 gem 'owlcarousel-rails'
 gem 'acts_as_votable'
+gem 'browserify-rails'
 gem 'steam-condenser'
 
 group :development do

@@ -1,97 +1,133 @@
-.navbar-primary {
-  height: $navbar-height;
-  position: relative;
-  z-index: 1000;
-  background: $navbar-bg;
+$navbar-top-bg: #222;
+$navbar-primary-bg: darken($navbar-top-bg, 3%);
+$navbar-top-height: 40px;
 
-  a {
+.navbar {
+
+  a:hover {
     text-decoration: none;
+    color: #fff;
   }
 
-  .container {
-    position: relative;
+  .side {
+    @extend .col-xs-2;
+    @include vertical-align;
+    height: $navbar-top-height;
+  }
+  .content {
+    @extend .col-xs-10;
+    @include vertical-align;
+    height: $navbar-top-height;
   }
 
-  ul {
-    list-style: none;
-    @include clearfix;
+  ul { @include horizontal-list; }
+}
+
+.navbar-top {
+  background: $navbar-top-bg;
+
+  .logo {
+    background: $brand-secondary;
+    text-align: center;
+    color: #fff;
+    padding: 10px 0;
+    display: block;
     position: relative;
-    z-index: 200;
-    margin: 0;
-    padding: 0;
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-family: $headings-font-family;
+    @include font-smooth;
+  }
 
-    li {
-      float: left;
-      display: table;
-      position: relative;
-      border-right: 1px solid $navbar-border;
+  .nav a {
+    color: rgba(255,255,255,0.4);
+    padding: 10px 15px;
 
-      &:last-child { border-right: none }
+    &:hover { color: #fff; }
+  }
 
-      &.active {
-        a {
-          color: rgba(255,255,255,1);
-          background: rgba(0,0,0,0.1);
-        }
-      }
-
-      a {
-        color: rgba(255,255,255,0.7);
-        font-weight: normal;
-        font-family: $navbar-font-family;
-        text-shadow: none;
-        font-size: 16px;
-        height: $navbar-height;
-        display: table-cell;
-        vertical-align: middle;
-        padding: 0 20px;
-
-        i:not(.fa-home) {
-          margin-right: 7px;
-          position: relative;
-        }
-
-        &:hover {
-          background: rgba(0,0,0,0.1);
-          color: #fff;
-        }
-      }
-    }
+  .nav li:last-child a {
+    background: $brand-primary;
+    color: #fff;
   }
 }
 
-.navbar-menu {
-  a {
-    color: #fff;
-    height: $navbar-height;
-    line-height: $navbar-height;
-    padding: 0 20px;
-    float: left;
-    font-weight: 300;
+.navbar-primary {
+  @include animate;
+  background: $navbar-primary-bg;
+
+  &.fixed {
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    .logo { display: none; }
+    .nav-icon { display: inline-block; }
+
+    .side, .content { height: 50px; }
+    .side { width: 5%; }
+    .content { width: 95%; }
+    .finder { display: none; }
   }
+
+  .side, .content { height: $navbar-top-height * 2.5; }
 
   .logo {
     background: $brand-primary;
-    &:hover { background: darken($brand-primary, 1%); }
-    img { margin-top: -2px; }
+    text-align: center;
+    display: block;
+    height: 100%;
+    img {
+      margin-top: 8px;
+      width: 85px;
+    }
   }
 
-  .search-toggle {
+  .nav-icon {
+    display: none;
+    color: #fff;
+    font-size: 35px;
+    background: $brand-primary;
+    padding: 0 10px;
+  }
+  .nav-icon-secondary {
     background: $brand-secondary;
-    font-size: 18px;
+  }
 
-    i {
-      width: 18px;
-      text-align: center;
+  .nav {
+    li {
+      border-right: 1px solid $navbar-top-bg;
+
+      &:last-child { border-right: none; }
+
+      &:hover {
+        background: $navbar-top-bg;
+        border-right-color: transparent;
+        a { color: #fff; }
+      }
+
+      a {
+        font-size: 22px;
+        font-family: $headings-font-family;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: rgba(255,255,255,0.4);
+        line-height: 45px;
+        padding: 0 25px;
+        position: relative;
+        @include font-smooth;
+      }
     }
+  }
 
-    &:hover { background: darken($brand-secondary, 1%); }
-
-    &.active {
-      background: #fff;
-      color: rgba(0,0,0,0.4);
-
-      i:before { content: "\f00d" }
+  .finder {
+    a {
+      color: rgba(255,255,255,0.4);
+      i { color: rgba(255,255,255,0.6); margin-right: 8px; }
     }
   }
 }
+

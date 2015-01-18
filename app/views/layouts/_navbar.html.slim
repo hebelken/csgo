@@ -1,31 +1,33 @@
-.navbar-primary
-  .container
-    .navbar-menu.pull-left
-      a href='#' class='logo' = image_tag 'logo-160.png'
-      a href='#' class='search-toggle toggler' data-target='finder' = fa_icon 'search'
+header class='navbar'
+  .navbar-top
+    .container
+      .row
+        .side
+          a href='#' class='logo' csgosurf.com
+        .content
+          ul.nav.pull-right
+            = navbar_link 'vip', '#'
+            = navbar_link 'login', '#'
+            = navbar_link 'signup', '#', 'user'
+  .navbar-primary
+    .container
+      .row
+        .side
+          a href='#' class='logo' = image_tag 'logo-light.png'
+          a href='#' class='nav-icon' = fa_icon 'home'
+        .content
+          ul.nav.pull-left
+            = navbar_link 'maps', '#'
+            = navbar_link 'servers', '#'
+            = navbar_link 'surfers', '#'
+            = navbar_link 'community', '#'
 
-    ul.pull-left
-      = navbar_link 'Maps', '#'
-      = navbar_link 'Servers', '#'
-      = navbar_link 'Community', '#'
+          ul.nav.pull-right
+            a href='#' class='nav-icon' = fa_icon 'search'
+            a href='#' class='nav-icon nav-icon-secondary' = fa_icon 'chevron-up'
 
-    ul.pull-right
-      - if current_user
-        li.user
-          a href='#'
-            i.glyphicon.glyphicon-cog
-            | Username
-        li.logout
-          a href='#'
-            i.glyphicon.glyphicon-off
-            | Logout
-      - else
-        li.login
-          a href='#'
-            = fa_icon 'lock'
-            | Login
-        li.signup
-          a href='#'
-            = fa_icon 'user'
-            | Sign Up
-
+          .finder.pull-right
+            a.search-link data-toggle="search" href="#"
+              = fa_icon 'search'
+              | Type anywhere to 
+              span.bold search

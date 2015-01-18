@@ -1,0 +1,32 @@
+.overlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.95);
+  z-index: 1010;
+  overflow: auto;
+
+  .has-results {
+    overflow: visible;
+  }
+
+  .overlay-search {
+    font-weight: 700;
+    font-size: 77px;
+    height: 100px;
+    letter-spacing: -1.925px;
+    line-height: 100px;
+    width: 100%;
+    padding-left: 0 !important;
+    background-color: transparent;
+    border: none;
+  }
+
+  .overlay-close {
+    position: absolute;
+    right: 20px;
+    top: 25px;
+  }
+}

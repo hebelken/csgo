@@ -1,4 +1,4 @@
-= render 'search'
+= render 'intro'
 
 .container
   .row
@@ -22,5 +22,6 @@
               | Sort
               = fa_icon 'sort-down'
         .box-content
+          textarea.text type='text'
+          input.text type='text'
           = link_to 'test', '#', class: 'btn btn-default'
-

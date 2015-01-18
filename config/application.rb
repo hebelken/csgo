@@ -6,6 +6,8 @@ Bundler.require(*Rails.groups)
 
 module Api
   class Application < Rails::Application
+    config.browserify_rails.commandline_options = "-t coffeeify --extension=\".js.coffee\""
+
     config.middleware.use Rack::Cors do
       allow do
         origins "*"

@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "",
+  "sourceRoot": "",
+  "sources": [
+    "/assets/source_maps/app/assets/javascripts/csgo.coffee"
+  ],
+  "names": [],
+  "mappings": "AAAA;AAAA,MAAA,WAAA;;AAAA,EAAA,MAAA,GAAS,OAAA,CAAQ,QAAR,CAAT,CAAA;;AAAA,EAEM;AACS,IAAA,aAAC,UAAD,GAAA;AACX,MAAA,IAAC,CAAA,MAAD,GAAc,IAAA,MAAA,CAAO,IAAP,CAAd,CADW;IAAA,CAAb;;eAAA;;MAHF,CAAA;;AAAA,EAMA,MAAM,CAAC,OAAP,GAAiB,GANjB,CAAA;AAAA"
+}
