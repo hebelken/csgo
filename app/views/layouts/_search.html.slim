@@ -1,10 +1,10 @@
-.overlay.closed data-trigger='search' style='display: none;'
+.overlay.closed data-trigger='search'
   .overlay-content
-    a.overlay-close href='#'
-      = fa_icon 'close'
+    a.overlay-close href='#'= fa_icon 'close'
+
     .container
-      input#overlay-search.overlay-search autocomplete='off' placeholder='Search...' spellcheck='false' /
-      p Search for a map by name, a server by name or ip, or a specific surfer.
-      br/
+      p.lead You can search for a <strong>map</strong>, a <strong>server</strong>, or a <strong>surfer</strong>
+      input#overlay-search.overlay-search autocomplete='off' placeholder='search...' spellcheck='false' /
+
       .search-results style='display: none;'
         p.bold Search Results
