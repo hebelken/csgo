@@ -35,7 +35,7 @@ ul.servers.box-list
                   | /
                   em.max_players= server.max_players
 
-              span.pinged class="#{server.pinged}" data-toggle="tooltip" data-placement="right" title="24"
+              span.pinged class="#{server.pinged}" data-animation="true" data-toggle="tooltip" data-placement="right" title="#{server.ping}"
 
         - if server.server_group
           div.server-group= server.server_group.name

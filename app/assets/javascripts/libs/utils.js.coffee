@@ -1,15 +1,21 @@
-$ ->
-  # tooltips
-  $("[data-toggle='tooltip']").tooltip()
+class Utils
+  constructor: -> return
 
-  # toggle target
-  $('.toggler').click ->
-    $(this).toggleClass('active')
-    target = $(this).data('target')
-    $('.'+target).toggle()
+  setupEvents: ->
+    # tooltips
+    $("[data-toggle='tooltip']").tooltip()
 
-$(window).scroll ->
-  if $(window).scrollTop() > $('.navbar-top').outerHeight()
-    $('.navbar-primary').addClass 'fixed'
-  else
-    $('.navbar-primary').removeClass 'fixed'
+    # toggle target
+    $('.toggler').click ->
+      $(this).toggleClass('active')
+      target = $(this).data('target')
+      $('.'+target).toggle()
+
+    $(window).scroll ->
+      if $(window).scrollTop() > $('.navbar-top').outerHeight()
+        $('.navbar-primary').addClass 'fixed'
+      else
+        $('.navbar-primary').removeClass 'fixed'
+
+
+module.exports = new Utils()

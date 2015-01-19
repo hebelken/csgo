@@ -13,6 +13,7 @@
     padding: 8px 5px 8px 15px;
     display: inline-block;
     font-family: $headings-font-family;
+    @include font-smooth;
     font-weight: 700;
     font-size: 16px;
     text-transform: uppercase;
@@ -41,6 +42,8 @@
   font-weight: bold;
   padding: 10px;
   cursor: pointer;
+  @include font-smooth;
+
   &:hover {
     background: darken($brand-primary, 4%);
     color: rgba(255,255,255,0.8);

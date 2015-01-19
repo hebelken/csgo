@@ -5,10 +5,20 @@ $server-font-size-sm: 12px;
 $server-bottom-padding: $server-padding - 3;
 $ip-padding: 8px;
 $ip-color: rgba(0,0,0,0.8);
+$tooltip-bg: rgba(118,198,118, 0.8); 
 
 .servers {
   padding: 0;
   margin: 0;
+
+  .tooltip-inner {
+    background: $tooltip-bg;
+    font-size: 10px;
+    @include font-smooth;
+  }
+  .tooltip.right .tooltip-arrow {
+    border-right-color: $tooltip-bg;
+  }
 
   li {
     list-style: none;
@@ -23,13 +33,14 @@ $ip-color: rgba(0,0,0,0.8);
 
     &.loading {
       .progress { display: block; }
+      .map_name, .players { @include opacity(0.3); }
     }
   }
 
   .progress {
     content: '';
     display: block;
-    background: rgba(92, 184, 92, 0.19);
+    background: rgba(92, 184, 92, 1);
     position: absolute;
     width: 0%;
     z-index: 0;
@@ -62,7 +73,6 @@ $ip-color: rgba(0,0,0,0.8);
     &:after {
       content: "\f111";
       font-size: 15px;
-      @include transition(0.1s linear);
       @include box-sizing(border-box);
       @include opacity(0.5);
     }
@@ -72,9 +82,8 @@ $ip-color: rgba(0,0,0,0.8);
     }
 
     &.loading {
-      background: image-url('progress-animated.svg') no-repeat 1px 0;
-      background-size: 13px;
-      color: transparent;
+      color: transparent !important;
+      background: image-url('loading.gif') no-repeat;
     }
 
     &.false { color: $brand-danger; }
@@ -83,6 +92,8 @@ $ip-color: rgba(0,0,0,0.8);
   .server-info {
     float: right;
     font-size: $server-font-size-sm;
+
+    .map_name, .players { @include animate; }
 
     .players {
       margin: 0 8px;

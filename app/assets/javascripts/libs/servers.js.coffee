@@ -1,10 +1,20 @@
-class Main
-  $servers: '.servers li div.server'
+class Servers
+  $servers: ''
 
-  constructor: ->
-    @$servers = $(@$servers)
+  constructor: -> return
 
-    @setupEvents()
+  setupEvents: ->
+    @$servers = $('.servers li div.server')
+
+    timeout = null
+    @$servers.find('.pinged').click (e) =>
+      id = $(e.currentTarget).parents('.server').data('id')
+      @_startLoading(id)
+
+      timeout = setTimeout( =>
+        @updateServer(id)
+      , 1000)
+
     @updateServers()
 
   updateServer: (id) =>
@@ -15,7 +25,7 @@ class Main
       @_stopLoading(id)
       @redrawServer(data.server) if data.server
     ).fail((msg) ->
-      console.log JSON.parse(msg.responseText).error
+      console.warn "[Servers] #{JSON.parse(msg.responseText).error}"
     )
 
   redrawServer: (data) ->
@@ -28,29 +38,15 @@ class Main
     $($el.find('.pinged')).attr('class', "pinged #{data['pinged']}")
     $($el.find('.number_of_players')).text(data['number_of_players'])
     $($el.find('.max_players')).text(data['max_players'])
+    $($el.find('.pinged')).attr('title', data['ping']).tooltip('fixTitle').tooltip('show')
+
+    setTimeout(->
+      $($el.find('.pinged')).tooltip('hide')
+    , 1000)
 
   updateServers: ->
     for el in @$servers
       @updateServer($(el).data('id'))
-
-  setupEvents: ->
-    @$servers.click =>
-      @updateServer($(@).data('id'))
-
-    timeout = null
-    @$servers.find('.pinged').click((e) =>
-      id = $(e.currentTarget).parents('.server').data('id')
-      @_startLoading(id)
-
-      timeout = setTimeout( =>
-        @updateServer(id)
-      , 1000)
-    )
-
-    #, (e) =>
-    #  id = $(e.currentTarget).parents('.server').data('id')
-    #  @_stopLoading(id)
-    #  clearTimeout(timeout)
 
   _getServer: (id) ->
     $($(".server[data-id=#{id}]")[0])
@@ -72,6 +68,4 @@ class Main
       width: '99%'
     , 1000)
 
-
-$ ->
-  window.main = new Main()
+module.exports = new Servers()
