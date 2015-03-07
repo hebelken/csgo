@@ -8,9 +8,18 @@
 // base
 @import 'base';
 
-// libraries
-@import 'font-awesome';
-
 // components
-@import 'modules/*';
-@import 'partials/*';
+@import 'modules/alerts';
+@import 'modules/box';
+@import 'modules/buttons';
+@import 'modules/footer';
+@import 'modules/forms';
+@import 'modules/navbar';
+@import 'modules/overlay';
+@import 'modules/panel';
+@import 'modules/table';
+@import 'modules/voting';
+
+@import 'partials/servers';
+@import 'partials/index';
+@import 'partials/login';

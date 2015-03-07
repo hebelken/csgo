@@ -8,6 +8,9 @@ module Api
   class Application < Rails::Application
     config.browserify_rails.commandline_options = "-t coffeeify --extension=\".js.coffee\""
 
+    config.assets.paths << Rails.root.join("public", "assets", "stylesheets")
+    config.assets.paths << Rails.root.join("public", "assets", "javascripts")
+
     config.middleware.use Rack::Cors do
       allow do
         origins "*"

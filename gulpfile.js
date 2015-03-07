@@ -26,7 +26,7 @@ var autoprefixer  = require('gulp-autoprefixer');
 var plumber       = require('gulp-plumber');
 
 var bundleConfigs = [{
-  entries: sourceFiles + '/javascripts/core.coffee',
+  entries: sourceFiles + '/javascripts/core/core.coffee',
   dest: publicAssets + '/javascripts',
   outputName: 'core.js',
   extensions: ['.js','.coffee']
@@ -84,7 +84,6 @@ var browserifyTask = function(callback, devMode) {
 
     var bundle = function() {
       return b
-        .pipe(plumber())
         .bundle()
         .on('error', handleErrors)
         .pipe(source(bundleConfig.outputName))
@@ -159,7 +158,7 @@ gulp.task('sass', function () {
   return gulp.src(sassConfig.src)
     .pipe(plumber())
     .pipe(sourcemaps.init())
-    .pipe(sass(sassConfig))
+    .pipe(sass(sassConfig.settings))
     .on('error', handleErrors)
     .pipe(sourcemaps.write({includeContent: false}))
     .pipe(autoprefixer({ browsers: ['> 1%', 'last 2 versions', 'ie 8', 'firefox < 20'] }))
