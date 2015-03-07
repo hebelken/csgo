@@ -23,6 +23,7 @@ gem 'owlcarousel-rails'
 gem 'acts_as_votable'
 gem 'browserify-rails'
 gem 'steam-condenser'
+gem 'gulper', path: '../gulper'
 
 group :development do
   gem 'spring'
