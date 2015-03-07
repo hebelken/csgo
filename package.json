@@ -10,7 +10,7 @@
     "url": "git://git.enova.com/ui/ui.git"
   },
   "scripts": {
-    "postinstall": "bower install && gulp build"
+    "postinstall": "bower install"
   },
   "browserify": {
     "transform": [
@@ -37,6 +37,7 @@
     "gulp-sourcemaps": "^1.2.8",
     "gulp-swig": "^0.7.4",
     "gulp-util": "^3.0.0",
+    "gulp-watch": "^4.1.1",
     "lodash": "^2.4.1",
     "pretty-hrtime": "~0.2.1",
     "require-dir": "^0.1.0",

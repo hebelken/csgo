@@ -12,3 +12,5 @@ class App
     servers.setupEvents()
 
 module.exports = App
+
+new App

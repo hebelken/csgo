@@ -26,7 +26,7 @@ var autoprefixer  = require('gulp-autoprefixer');
 var plumber       = require('gulp-plumber');
 
 var bundleConfigs = [{
-  entries: sourceFiles + '/javascripts/app.coffee',
+  entries: sourceFiles + '/javascripts/core.coffee',
   dest: publicAssets + '/javascripts',
   outputName: 'core.js',
   extensions: ['.js','.coffee']
@@ -38,16 +38,14 @@ var browserSyncConfig =  {
 }
 
 var sassConfig = {
-  srcFolder: '/app',
-  src: sourceFiles + '/stylesheets' + sassConfig.srcFolder + '/*.scss',
-  browsers: ['> 1%', 'last 2 versions', 'ie 8', 'firefox < 20'], 
+  src: sourceFiles + '/stylesheets/core/*.scss',
   dest: publicAssets + '/stylesheets',
   settings: {
     style: 'compressed',
     imagePath: '/assets/images',
     includePaths: [
       bowerDir + '/bootstrap-sass/assets/stylesheets',
-      sourceFiles + '/stylesheets' + srcFolder + '/'
+      sourceFiles + '/stylesheets/core/'
     ]
   }
 }
@@ -86,6 +84,7 @@ var browserifyTask = function(callback, devMode) {
 
     var bundle = function() {
       return b
+        .pipe(plumber())
         .bundle()
         .on('error', handleErrors)
         .pipe(source(bundleConfig.outputName))
@@ -163,7 +162,7 @@ gulp.task('sass', function () {
     .pipe(sass(sassConfig))
     .on('error', handleErrors)
     .pipe(sourcemaps.write({includeContent: false}))
-    .pipe(autoprefixer({browsers: sassConfig.browsers}))
+    .pipe(autoprefixer({ browsers: ['> 1%', 'last 2 versions', 'ie 8', 'firefox < 20'] }))
     .pipe(gulp.dest(sassConfig.dest))
     .pipe(browserSync.reload({stream:true}));
 });
