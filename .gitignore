@@ -16,3 +16,6 @@
 /tmp
 .DS_Store
 Procfile.local
+node_modules/
+bower_components/
+
