@@ -5,7 +5,7 @@
 
 var publicAssets  = './public/assets';
 var sourceFiles   = './app/assets';
-var bowerDir      = './bower_components'; 
+var bowerDir      = './vendor/assets/bower_components'; 
 
 var _             = require('lodash');
 var gulp          = require('gulp');
@@ -26,7 +26,7 @@ var autoprefixer  = require('gulp-autoprefixer');
 var plumber       = require('gulp-plumber');
 
 var bundleConfigs = [{
-  entries: sourceFiles + '/javascripts/core/core.coffee',
+  entries: sourceFiles + '/javascripts/core/core.js.coffee',
   dest: publicAssets + '/javascripts',
   outputName: 'core.js',
   extensions: ['.js','.coffee']

@@ -1,5 +1,6 @@
-bulk = require('bulk-require')
-Controllers = bulk(__dirname, './controllers/*')
+Controllers = {
+  site_controller: require('./controllers/site_controller.js.coffee')
+}
 
 class Routes
   constructor: (app) ->
@@ -9,10 +10,8 @@ class Routes
 
   setController: (_controller) ->
     if _controller?
-      Controller = Controllers.controllers["#{_controller}_controller.js"]
-
-      if Controller?
-        @app.Controller = new Controller()
+      if Controllers["#{_controller}_controller"]?
+        @app.Controller = new Controllers["#{_controller}_controller"]()
       else
         @warn "Controller: '#{_controller}' could not be found"
 

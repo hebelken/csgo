@@ -56,4 +56,4 @@ class Search
           @keypress e
       , 100)
 
-module.exports = new Search()
+module.exports = new Search

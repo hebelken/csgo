@@ -1,4 +1,5 @@
 //= require jquery
-//= require bootstrap-sprockets
-//= require bootstrap/tooltip
+//= require bootstrap-sass/assets/javascripts/bootstrap/tooltip
+
+//  this file is compiled from gulp into public
 //= require core 
