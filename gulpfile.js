@@ -123,7 +123,7 @@ gulp.task('clean', function (cb) {
   del([publicAssets], cb);
 });
 
-gulp.task('default', ['sass', 'watch']);
+gulp.task('default', ['sass', 'images', 'watch']);
 
 gulp.task('images', function() {
   return gulp.src(imageConfig.src)
