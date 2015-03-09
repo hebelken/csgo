@@ -3,6 +3,9 @@ $navbar-primary-bg: darken($navbar-top-bg, 3%);
 $navbar-top-height: 40px;
 
 .navbar {
+  border: none;
+  margin-bottom: 0;
+
   a:hover {
     text-decoration: none;
     color: #fff;

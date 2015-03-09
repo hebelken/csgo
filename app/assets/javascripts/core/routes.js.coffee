@@ -1,4 +1,6 @@
-Controllers = require('controllers')
+Controllers = {
+  site_controller: require('./controllers/site_controller.js.coffee')
+}
 
 class Routes
   constructor: (app) ->
