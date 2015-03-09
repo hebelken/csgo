@@ -1,0 +1,15 @@
+.container
+  .row
+    .col-xs-12
+      ul
+        - @maps.each do |m|
+          li
+            = m.name
+            | (
+            = m.likes
+            | ) 
+            | playing on:
+            ul
+            - m.playing_on.map do |server| 
+              li= server.name
+
