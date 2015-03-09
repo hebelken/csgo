@@ -71,18 +71,20 @@ ActiveRecord::Schema.define(version: 20150307010101) do
   end
 
   create_table "servers", force: :cascade do |t|
-    t.string   "name",               null: false
+    t.string   "name",                null: false
     t.string   "url"
-    t.string   "port",               null: false
-    t.string   "ip",                 null: false
+    t.string   "port",                null: false
+    t.string   "ip",                  null: false
     t.integer  "number_of_players"
     t.integer  "max_players"
+    t.string   "map_name"
     t.integer  "ping"
-    t.text     "player_names",                    array: true
+    t.text     "player_names",                     array: true
     t.integer  "server_group_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "created_by_user_id"
+    t.boolean  "last_ping_succeeded"
   end
 
   add_index "servers", ["server_group_id"], name: "index_servers_on_server_group_id", using: :btree

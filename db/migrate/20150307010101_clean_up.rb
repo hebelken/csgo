@@ -10,7 +10,8 @@ class CleanUp < ActiveRecord::Migration
     remove_column :servers, :pinged
     remove_column :servers, :user_id
 
-    add_column    :servers, :created_by_user_id, :integer
+    add_column    :servers, :created_by_user_id,  :integer
+    add_column    :servers, :last_ping_succeeded, :boolean
 
     # Server Groups
     remove_column :server_groups, :user_id

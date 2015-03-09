@@ -4,7 +4,7 @@ class Surf::Server < ActiveRecord::Base
   validates :ip, uniqueness: true
   validates :name, :ip, presence: true
 
-  belongs_to :user
+  belongs_to :created_by_user, class_name: 'User'
   belongs_to :server_group
 
   def group
@@ -29,14 +29,22 @@ class Surf::Server < ActiveRecord::Base
 
     info = server.server_info
 
-    update_attributes({
-      name:               info[:server_name],
-      number_of_players:  info[:number_of_players],
-      max_players:        info[:max_players],
-      map_name:           info[:map_name],
-      player_names:       server.players.keys,
-      ping:               server.ping,
-      pinged:             true,
-    })
+    update_attributes(
+      name:                 info[:server_name],
+      number_of_players:    info[:number_of_players],
+      max_players:          info[:max_players],
+      map_name:             info[:map_name],
+      player_names:         server.players.keys,
+      ping:                 server.ping,
+      last_ping_succeeded:  true,
+    )
+
+  rescue
+    # If we can, note that this failed for the UI to display.
+    update_attributes(
+      last_ping_succeeded: false
+    )
+
+    raise
   end
 end
