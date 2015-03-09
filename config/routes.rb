@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   get '/api/csrf', to: 'csrf#index'
 
   devise_for :users, controllers: { sessions: 'sessions' }
+  
+  resources :maps, only: [ :index, :show ] do
+    post 'like'
+  end
 
   root to: 'site#index'
 end

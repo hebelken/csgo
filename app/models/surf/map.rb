@@ -12,6 +12,14 @@ class Surf::Map < ActiveRecord::Base
     super.merge({votes: self.votes})
   end
 
+  def likes
+    get_likes.count
+  end
+
+  def playing_on
+    Surf::Server.where(map_name: name)
+  end
+
   def votes
     self.votes_for.map do |vote|
       vote.attributes.except!('voter_type', 'vote_flag', 'vote_scope', 'vote_weight')
